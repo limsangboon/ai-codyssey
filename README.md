@@ -564,7 +564,19 @@ Git은 Dockerfile과 index.html의 변경,
 - [Git 설정 및 원격 연결 로그](evidence/12-git-submit.txt)
 
 공개 저장소 복제 성공과 GitHub 업로드 인증 성공은 구분합니다.
-업로드 완료 후 실제 push 결과와 제출 커밋 링크를 추가할 예정입니다.
+
+
+### GitHub 업로드 결과
+
+```text
+To https://github.com/limsangboon/ai-codyssey.git
+   687f3ba..b3b68d9  main -> main
+```
+
+실습 자료를 원격 저장소의 main 브랜치에 업로드했습니다.
+
+- [실습 자료 업로드 커밋](https://github.com/limsangboon/ai-codyssey/commit/b3b68d9)
+
 
 ## 13. 트러블슈팅
 
