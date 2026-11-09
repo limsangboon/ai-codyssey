@@ -1,0 +1,50 @@
+**********************
+PowerShell 기록 시작
+시작 시간: 20261109215131
+사용자 이름: 상분이의노트북\임상분
+실행 사용자: 상분이의노트북\임상분
+구성 이름: 
+컴퓨터: 상분이의노트북 (Microsoft Windows NT 10.0.26300.0)
+호스트 애플리케이션: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.9.0_x64__8wekyb3d8bbwe\pwsh.dll
+프로세스 ID: 12584
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+대화 내용 기록이 시작되었습니다. 출력 파일은 .\evidence\04-hello-world.txt입니다.
+PS C:\Users\임상분\Desktop\codyssey-practice> docker run --name codyssey-hello hello-world
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+PS C:\Users\임상분\Desktop\codyssey-practice> docker ps -a --filter name=codyssey-hello
+CONTAINER ID   IMAGE         COMMAND    CREATED         STATUS                     PORTS     NAMES
+6f3ac8d4dff3   hello-world   "/hello"   8 seconds ago   Exited (0) 7 seconds ago             codyssey-hello
+PS C:\Users\임상분\Desktop\codyssey-practice> Stop-Transcript
+**********************
+PowerShell 기록 끝
+종료 시간: 20261109215308
+**********************

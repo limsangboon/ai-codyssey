@@ -1,0 +1,45 @@
+**********************
+PowerShell 기록 시작
+시작 시간: 20261109224134
+사용자 이름: 상분이의노트북\임상분
+실행 사용자: 상분이의노트북\임상분
+구성 이름: 
+컴퓨터: 상분이의노트북 (Microsoft Windows NT 10.0.26300.0)
+호스트 애플리케이션: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.9.0_x64__8wekyb3d8bbwe\pwsh.dll
+프로세스 ID: 12584
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+대화 내용 기록이 시작되었습니다. 출력 파일은 .\evidence\10-volume.txt입니다.
+PS C:\Users\임상분\Desktop\codyssey-practice> docker volume create codyssey-data
+codyssey-data
+PS C:\Users\임상분\Desktop\codyssey-practice> docker run --name codyssey-volume-write --mount type=volume,source=codyssey-data,target=/data ubuntu:24.04 sh -c 'echo "Hello volume from Codyssey" > /data/memo.txt; cat /data/memo.txt'
+Hello volume from Codyssey
+PS C:\Users\임상분\Desktop\codyssey-practice> docker rm codyssey-volume-write
+codyssey-volume-write
+PS C:\Users\임상분\Desktop\codyssey-practice> docker run --rm --name codyssey-volume-read --mount type=volume,source=codyssey-data,target=/data ubuntu:24.04 cat /data/memo.txt
+Hello volume from Codyssey
+PS C:\Users\임상분\Desktop\codyssey-practice> docker volume inspect codyssey-data
+[
+    {
+        "CreatedAt": "2026-11-09T13:41:43Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/codyssey-data/_data",
+        "Name": "codyssey-data",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+PS C:\Users\임상분\Desktop\codyssey-practice> Stop-Transcript
+**********************
+PowerShell 기록 끝
+종료 시간: 20261109224446
+**********************

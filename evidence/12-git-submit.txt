@@ -1,0 +1,58 @@
+**********************
+PowerShell 기록 시작
+시작 시간: 20261109225436
+사용자 이름: 상분이의노트북\임상분
+실행 사용자: 상분이의노트북\임상분
+구성 이름: 
+컴퓨터: 상분이의노트북 (Microsoft Windows NT 10.0.26300.0)
+호스트 애플리케이션: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.9.0_x64__8wekyb3d8bbwe\pwsh.dll
+프로세스 ID: 12584
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+대화 내용 기록이 시작되었습니다. 출력 파일은 .\evidence\12-git-submit.txt입니다.
+PS C:\Users\임상분\Desktop\ai-codyssey-submit> git config --get user.name
+SangboonLim
+PS C:\Users\임상분\Desktop\ai-codyssey-submit> git config --get user.email
+limsangboon@gmail.com
+PS C:\Users\임상분\Desktop\ai-codyssey-submit> git config --get init.defaultBranch
+main
+PS C:\Users\임상분\Desktop\ai-codyssey-submit> git remote -v
+origin  https://github.com/limsangboon/ai-codyssey.git (fetch)
+origin  https://github.com/limsangboon/ai-codyssey.git (push)
+PS C:\Users\임상분\Desktop\ai-codyssey-submit> git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   Dockerfile
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        evidence/
+        images/03-permissions-after.png
+        images/03-permissions-before.png
+        images/04-hello-world.png
+        images/07-web-8080.png
+        images/08-web-8081.png
+        images/09-bind-after.png
+        images/09-bind-before.png
+        images/10-volume-persistence.png
+        terminal-practice/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\임상분\Desktop\ai-codyssey-submit> Stop-Transcript
+**********************
+PowerShell 기록 끝
+종료 시간: 20261109225441
+**********************

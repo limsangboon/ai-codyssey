@@ -1,0 +1,116 @@
+**********************
+PowerShell 기록 시작
+시작 시간: 20261109132148
+사용자 이름: 상분이의노트북\임상분
+실행 사용자: 상분이의노트북\임상분
+구성 이름: 
+컴퓨터: 상분이의노트북 (Microsoft Windows NT 10.0.26300.0)
+호스트 애플리케이션: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.9.0_x64__8wekyb3d8bbwe\pwsh.dll
+프로세스 ID: 22584
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+대화 내용 기록이 시작되었습니다. 출력 파일은 .\evidence\02-terminal.txt입니다.
+PS C:\Users\임상분\codyssey-practice> New-Item -ItemType Directory -Path terminal-practice
+
+    디렉터리: C:\Users\임상분\codyssey-practice
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----        2026-11-09  오후 1:22                terminal-practice
+
+PS C:\Users\임상분\codyssey-practice> Set-Location .\terminal-practice
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Get-Location
+
+Path
+----
+C:\Users\임상분\codyssey-practice\terminal-practice
+
+PS C:\Users\임상분\codyssey-practice\terminal-practice> New-Item -ItemType File -Path empty.txt
+
+    디렉터리: C:\Users\임상분\codyssey-practice\terminal-practice
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---        2026-11-09  오후 1:22              0 empty.txt
+
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Set-Content -Path hello.txt -Value "Hello, Codyssey!"
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Get-Content .\hello.txt
+Hello, Codyssey!
+PS C:\Users\임상분\codyssey-practice\terminal-practice> New-Item -ItemType File -Path hidden.txt
+
+    디렉터리: C:\Users\임상분\codyssey-practice\terminal-practice
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---        2026-11-09  오후 1:23              0 hidden.txt
+
+PS C:\Users\임상분\codyssey-practice\terminal-practice> attrib +h .\hidden.txt
+
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Get-ChildItem
+
+    디렉터리: C:\Users\임상분\codyssey-practice\terminal-practice
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---        2026-11-09  오후 1:22              0 empty.txt
+-a---        2026-11-09  오후 1:22             18 hello.txt
+
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Get-ChildItem -Force
+
+    디렉터리: C:\Users\임상분\codyssey-practice\terminal-practice
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---        2026-11-09  오후 1:22              0 empty.txt
+-a---        2026-11-09  오후 1:22             18 hello.txt
+-a-h-        2026-11-09  오후 1:23              0 hidden.txt
+
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Copy-Item .\hello.txt -Destination .\hello-copy.txt
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Rename-Item .\hello-copy.txt -NewName renamed.txt
+PS C:\Users\임상분\codyssey-practice\terminal-practice> New-Item -ItemType Directory -Path archive
+
+    디렉터리: C:\Users\임상분\codyssey-practice\terminal-practice
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----        2026-11-09  오후 1:24                archive
+
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Move-Item .\renamed.txt -Destination .\archive\
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Get-ChildItem .\archive
+
+    디렉터리: C:\Users\임상분\codyssey-practice\terminal-practice\archive
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---        2026-11-09  오후 1:22             18 renamed.txt
+
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Get-Content .\archive\renamed.txt
+Hello, Codyssey!
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Remove-Item .\archive\renamed.txt
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Remove-Item .\archive
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Test-Path .\archive
+False
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Get-ChildItem -Force
+
+    디렉터리: C:\Users\임상분\codyssey-practice\terminal-practice
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---        2026-11-09  오후 1:22              0 empty.txt
+-a---        2026-11-09  오후 1:22             18 hello.txt
+-a-h-        2026-11-09  오후 1:23              0 hidden.txt
+
+PS C:\Users\임상분\codyssey-practice\terminal-practice> Set-Location ..
+PS C:\Users\임상분\codyssey-practice> Stop-Transcript
+**********************
+PowerShell 기록 끝
+종료 시간: 20261109132529
+**********************

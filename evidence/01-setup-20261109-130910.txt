@@ -1,0 +1,77 @@
+**********************
+PowerShell 기록 시작
+시작 시간: 20261109130912
+사용자 이름: 상분이의노트북\임상분
+실행 사용자: 상분이의노트북\임상분
+구성 이름: 
+컴퓨터: 상분이의노트북 (Microsoft Windows NT 10.0.26300.0)
+호스트 애플리케이션: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.9.0_x64__8wekyb3d8bbwe\pwsh.dll
+프로세스 ID: 22584
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+대화 내용 기록이 시작되었습니다. 출력 파일은 .\evidence\01-setup-20261109-130910.txt입니다.
+PS C:\Users\임상분\codyssey-practice> Get-Date
+
+2026년 11월 9일 월요일 오후 1:09:43
+
+PS C:\Users\임상분\codyssey-practice> Get-Location
+
+Path
+----
+C:\Users\임상분\codyssey-practice
+
+PS C:\Users\임상분\codyssey-practice> Get-ChildItem-Force
+Get-ChildItem-Force: 'Get-ChildItem-Force' 용어는 cmdlet, 함수, 스크립트 파일 또는 실행 프로그램의 이름으로 인식되지 않습니다.
+이름의 철자를 확인하거나 경로가 포함되어 있으면 경로가 올바른지 확인하고 다시 시도합니다.
+Get-ChildItem-Force: 'Get-ChildItem-Force' 용어는 cmdlet, 함수, 스크립트 파일 또는 실행 프로그램의 이름으로 인식되지 않습니다.
+이름의 철자를 확인하거나 경로가 포함되어 있으면 경로가 올바른지 확인하고 다시 시도합니다.
+PS C:\Users\임상분\codyssey-practice> CommandInvocation(Get-Command): "Get-Command"
+>> ParameterBinding(Get-Command): name="UseFuzzyMatching"; value="True"
+>> ParameterBinding(Get-Command): name="FuzzyMinimumDistance"; value="1"
+>> ParameterBinding(Get-Command): name="Name"; value="Get-ChildItem-Force"
+>> CommandInvocation(Select-Object): "Select-Object"
+>> ParameterBinding(Select-Object): name="First"; value="5"
+>> ParameterBinding(Select-Object): name="Unique"; value="True"
+>> ParameterBinding(Select-Object): name="ExpandProperty"; value="Name"
+PS C:\Users\임상분\codyssey-practice> Get-ChildItem -Force
+
+    디렉터리: C:\Users\임상분\codyssey-practice
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----        2026-11-09  오후 1:09                evidence
+d----        2026-11-09  오후 1:08                images
+
+PS C:\Users\임상분\codyssey-practice> $PSVersionTable.PSVersion
+
+Major  Minor  Patch  PreReleaseLabel BuildLabel
+-----  -----  -----  --------------- ----------
+7      6      9
+
+PS C:\Users\임상분\codyssey-practice> git --version
+git version 2.56.0.windows.4
+PS C:\Users\임상분\codyssey-practice> code --version
+1.145.2
+c4453f8ea430795f941c1b2ff6c9321135a74a02
+x64
+PS C:\Users\임상분\codyssey-practice> docker --version
+Docker version 29.9.2, build a82e528
+PS C:\Users\임상분\codyssey-practice> docker --info
+unknown flag: --info
+
+Usage:  docker [OPTIONS] COMMAND [ARG...]
+
+Run 'docker --help' for more information
+PS C:\Users\임상분\codyssey-practice> Stop-Transcript
+**********************
+PowerShell 기록 끝
+종료 시간: 20261109131242
+**********************

@@ -1,0 +1,49 @@
+**********************
+PowerShell 기록 시작
+시작 시간: 20261109224534
+사용자 이름: 상분이의노트북\임상분
+실행 사용자: 상분이의노트북\임상분
+구성 이름: 
+컴퓨터: 상분이의노트북 (Microsoft Windows NT 10.0.26300.0)
+호스트 애플리케이션: C:\Program Files\WindowsApps\Microsoft.PowerShell_7.6.9.0_x64__8wekyb3d8bbwe\pwsh.dll
+프로세스 ID: 12584
+PSVersion: 7.6.9
+PSEdition: Core
+GitCommitId: 7.6.9
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+대화 내용 기록이 시작되었습니다. 출력 파일은 .\evidence\11-backup.txt입니다.
+PS C:\Users\임상분\Desktop\codyssey-practice> New-Item -ItemType Directory -Force -Path backups
+
+    디렉터리: C:\Users\임상분\Desktop\codyssey-practice
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----        2026-11-09 오후 10:45                backups
+
+PS C:\Users\임상분\Desktop\codyssey-practice> docker run --rm --mount type=volume,source=codyssey-data,target=/data,readonly --mount "type=bind,source=$($PWD.Path)/backups,target=/backup" ubuntu:24.04 tar -czf /backup/codyssey-data.tar.gz -C /data .
+
+PS C:\Users\임상분\Desktop\codyssey-practice> Get-Item .\backups\codyssey-data.tar.gz
+
+    디렉터리: C:\Users\임상분\Desktop\codyssey-practice\backups
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---        2026-11-09 오후 10:45            173 codyssey-data.tar.gz
+
+PS C:\Users\임상분\Desktop\codyssey-practice> docker volume create codyssey-restored
+codyssey-restored
+PS C:\Users\임상분\Desktop\codyssey-practice> docker run --rm --mount type=volume,source=codyssey-restored,target=/data --mount "type=bind,source=$($PWD.Path)/backups,target=/backup,readonly" ubuntu:24.04 tar -xzf /backup/codyssey-data.tar.gz -C /data
+
+PS C:\Users\임상분\Desktop\codyssey-practice> docker run --rm --mount type=volume,source=codyssey-restored,target=/data,readonly ubuntu:24.04 cat /data/memo.txt
+Hello volume from Codyssey
+PS C:\Users\임상분\Desktop\codyssey-practice> Stop-Transcript
+**********************
+PowerShell 기록 끝
+종료 시간: 20261109224831
+**********************
